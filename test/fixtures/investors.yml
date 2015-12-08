@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticker: 
+  description: 
+  total_esg: 
+  e: 
+  s: 
+  g: 1.5
+
+two:
+  ticker: 
+  description: 
+  total_esg: 
+  e: 
+  s: 
+  g: 1.5

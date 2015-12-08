@@ -1,0 +1,31 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1>ESG Values</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profile.each do |profile| %>
+      <tr>
+        <td><%= profile.e %></td>
+        <td><%= profile.s %></td>
+        <td><%= profile.g %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Enter scores', new_profile_path %></br>
+<%= link_to 'Go to Investor Page', investors_path %>
+
+

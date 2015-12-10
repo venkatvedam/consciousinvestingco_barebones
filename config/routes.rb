@@ -5,11 +5,8 @@ Rails.application.routes.draw do
   resources :investors
    root to: 'investors#index'
 
-  get '/:profiles' => 'profiles#index'
-  resources :profiles
-
-  #get '/:radarChart' => 'investors#index'
-  #resources :radarChart
+  #get '/:profiles' => 'profiles#index'
+  #resources :profiles
 
   get '/:investors' => 'investors#index'
   resources :investors do

@@ -42,12 +42,30 @@ font-weight:bold; font-size:large;
 margin-left:40px;
 }
 
+#chart {
+  float: right;
+}
+
 #slider {
-margin-left:10px;
+float: left;
+margin: 300px 150px 100px 80px;
 width: 250px;
 color:#330000
 }
 
+#listInvestors {
+  float: right;
+  clear: both;
+}
+
+#submit {
+  clear:both;
+}
+
+#csvImport {
+  clear:both;
+  align: left;
+}
 
 input[type='range'] {
 -webkit-appearance: none;
@@ -55,3 +73,19 @@ padding-left:2px; padding-right:2px;
 -webkit-border-radius: 5px;
 background-image: -webkit-linear-gradient(top, #000000, #333333, #000000);
 }
+
+#buttons {
+    float: left;
+    list-style: none;
+    text-align: center;
+}
+
+
+#results {
+clear:both;
+font-weight:bold;
+font-size:large;
+}
+
+
+

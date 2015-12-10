@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   resources :investors
-   root to: 'profiles#index'
+   root to: 'investors#index'
 
   get '/:profiles' => 'profiles#index'
   resources :profiles

@@ -9,7 +9,7 @@ class InvestorsController < ApplicationController
   end
 
   def calculate
-    portfolio = params[:investor_ids] # params[:investor_ids] <- this is an array of checked investor ids
+    portfolio = params[:investor_ids]
 
     investments = Investor.find(portfolio)
 

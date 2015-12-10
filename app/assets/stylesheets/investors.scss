@@ -1,3 +1,57 @@
 // Place all the styles related to the Investors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#environmental {
+border-radius:10px;
+width:45px;
+padding-top:10px; padding-bottom:10px;
+background-image: -webkit-linear-gradient(top, #cccccc, #128f52);
+background-image: -o-linear-gradient(top, #cccccc, #128f52);
+background-image: -moz-linear-gradient(top, #cccccc, #128f52);
+text-align:center;
+color:#330000;
+font-weight:bold; font-size:large;
+margin-left:40px;
+}
+
+#social {
+border-radius:10px;
+width:45px;
+padding-top:10px; padding-bottom:10px;
+background-image: -webkit-linear-gradient(top, #cccccc, #0c5a95);
+background-image: -o-linear-gradient(top, #cccccc, #0c5a95);
+background-image: -moz-linear-gradient(top, #cccccc, #0c5a95);
+text-align:center;
+color:#330000;
+font-weight:bold; font-size:large;
+margin-left:40px;
+}
+
+#governance {
+border-radius:10px;
+width:45px;
+padding-top:10px; padding-bottom:10px;
+background-image: -webkit-linear-gradient(top, #cccccc, #950e0c);
+background-image: -o-linear-gradient(top, #cccccc, #950e0c);
+background-image: -moz-linear-gradient(top, #cccccc, #950e0c);
+text-align:center;
+color:#330000;
+font-weight:bold; font-size:large;
+margin-left:40px;
+}
+
+#slider {
+margin-left:10px;
+width: 250px;
+color:#330000
+}
+
+
+input[type='range'] {
+-webkit-appearance: none;
+padding-left:2px; padding-right:2px;
+-webkit-border-radius: 5px;
+background-image: -webkit-linear-gradient(top, #000000, #333333, #000000);
+}

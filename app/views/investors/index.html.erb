@@ -1,31 +1,83 @@
 <!DOCTYPE html>
 <html>
-<body>
-<%= form_tag calculate_investors_path, multipart: true do %>
+  <head>
+    <title>Sliders</title>
 
-    <% @investors.each do |investor| %>
-    <div class= <%= investor.div_name(investor.description) %> >
-        <div><%= check_box_tag('investor_ids[]', investor.id) %></div>
-        <div><%= investor.description %></div>
-        <div><%= investor.e %></div>
-        <div><%= investor.s %></div>
-        <div><%= investor.g %></div>
-        <div><%= investor.div_name(investor.description)   %></div>
-     </div>
+    <style type="text/css">
+    </style>
+
+    <script type="text/javascript">
+      function updateESlider(slideAmount) {
+          //get the element
+          var display = document.getElementById("environmental");
+          //show the amount
+          display.innerHTML=slideAmount;
+        }
+
+        function updateSSlider(slideAmount) {
+          var display = document.getElementById("social");
+          display.innerHTML=slideAmount;
+        }
+
+        function updateGSlider(slideAmount) {
+          var display = document.getElementById("governance");
+          display.innerHTML=slideAmount;
+        }
+
+    </script>
+
+    <script src="investors.coffee"></script>
+    <script src="html5slider.js"></script>
+    <script>
+      function slider()
+      {
+        var sliderValue = document.getElementByID('rating').value;
+        document.getElementByID('sliderVal').innerHTML = sliderValue;
+      }
+    </script>
+  </head>
+
+
+  <body>
+    Environmental
+    <div id="slider">
+      <input id="slide" type="range" min="5" max="100" step="1" value="50" onchange="updateESlider(this.value)" />
+      <div id="environmental">50</div>
+    Social
+      <input id="slide" type="range" min="5" max="100" step="1" value="50" onchange="updateSSlider(this.value)" />
+      <div id="social">50</div>
+    Governance
+      <input id="slide" type="range" min="5" max="100" step="1" value="50" onchange="updateGSlider(this.value)" />
+      <div id="governance">50</div>
+
+    </div><br/>
+
+    <%= form_tag calculate_investors_path, multipart: true do %>
+
+        <% @investors.each do |investor| %>
+          <div class= <%= investor.div_name(investor.description) %> >
+            <div><%= check_box_tag('investor_ids[]', investor.id) %></div>
+            <div><%= investor.description %></div>
+            <div><%= investor.e %></div>
+            <div><%= investor.s %></div>
+            <div><%= investor.g %></div>
+            <div><%= investor.div_name(investor.description)   %></div>
+          </div>
+        <% end %>
+
+      <input type='submit'></input>
     <% end %>
 
-<input type='submit'></input>
-<% end %>
+    <div>
+      <h3>Import a CSV File</h3>
+        <%= form_tag import_investors_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import CSV" %>
+        <% end %>
+    </div>
 
-<div>
-<h3>Import a CSV File</h3>
-  <%= form_tag import_investors_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-  <% end %>
-</div>
-
-<div><%= "Your companies are #{$companies}. E:#{$e_average}    S:#{$s_average}    G:#{$g_average}. Total Impact Score:#{$total_impact}" %> </div>
+    <div><%= "Your companies are #{$companies}. E:#{$e_average}    S:#{$s_average}    G:#{$g_average}. Total Impact Score:#{$total_impact}" %>
+    </div>
 
   </body>
 </html>
